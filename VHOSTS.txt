@@ -1,0 +1,20 @@
+#VHost em Apache - C:\xampp\apache\conf\extra
+<VirtualHost *:80>
+    ServerAdmin gabrielperinotto@hotmail.com
+    DocumentRoot "C:/xampp/htdocs/Projeto-Prime"
+    ServerName www.primemoveis.com.br
+    ErrorLog "logs/dummy-host2.example.com-error.log"
+    CustomLog "logs/dummy-host2.example.com-access.log" common
+    <Directory "C:/xampp/htdocs/Projeto-Prime">
+        Require all granted
+
+        RewriteEngine On
+
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^ index.php [QSA,L]
+    </Directory>
+</VirtualHost>
+
+$Host em Sys32 - C:\xampp\apache\conf\extra
+127.0.0.1   www.primemoveis.com.br

@@ -1,0 +1,12 @@
+{if="$erro != ''"}
+<script>
+    window.onload = function(){
+        M.toast({html: '{$erro}'});
+    }
+</script>
+{/if}
+
+<h1>Ola, como vai?</h1>
+{if="$nome!=''"}
+<h6>Bem vindo {$nome}</h6>
+{/if}

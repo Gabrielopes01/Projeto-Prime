@@ -1,0 +1,53 @@
+
+<div class="row">
+    <div class="col s12 m6 push-m2">
+        <h3 class="light"; align="left">Usuários</h3>
+        <table class="striped" style="border: 3px solid black; font-family:'Helvetica'">
+            <thead>
+                <th>Nome</th>
+                <th></th>
+                <th>Email</th>
+                <th></th>
+                <th>Criação</th>
+                <th></th>
+                <th>Administrativo</th>
+                <th></th>
+                <th>Telefone</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                {loop="$usuarios"}
+                <tr>
+                    <td >{$value.Nome}</td>
+                    <td>|</td>
+                    <td>{$value.Email}</td>
+                    <td>|</td>
+                    <td>{function="formatDate($value.Data)"}</td>
+                    <td>|</td>
+                    {if="$value.Adm == 1"}
+                    <td><strong>Administrador</strong></td>
+                    <td>|</td>
+                    {else}
+                    <td>Cliente</td>
+                    <td>|</td>
+                    {/if}
+                    <td>4002922</td>
+                    <td>|</td>
+                    <td><a href="/admin/edit/{$value.Id}" class="btn gray hoverable"><i class="material-icons">info</i></a></td>
+                    <td><a href="/admin/edit/{$value.Id}" class="btn yellow hoverable"><i class="material-icons">edit</i></a></td>
+                    <td><a href="/admin/delete/{$value.Id}" class="btn red hoverable"><i class="material-icons">delete</i></a></td>
+                </tr>
+                {/loop}
+            </tbody>
+
+        </table>
+        <hr>
+        <a href="/admin/add" class="waves-effect waves-light btn right"><i class="material-icons left">add_circle</i>Cadastrar Usuário</a>
+    </div>
+</div>
+<br>
+<br>
+<br>

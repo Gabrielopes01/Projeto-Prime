@@ -1,0 +1,49 @@
+{if="$erro != ''"}
+<script>
+    window.onload = function(){
+        M.toast({html: '{$erro}'});
+    }
+</script>
+{/if}
+
+<div class="row">
+    <div class="col s12 m6 push-m3">
+        <form method="POST">
+            <h3 class="light"; align="left">Cadastrar Usuário</h3>
+            <div class="input-field col s12">
+                <input type="text" name="nome" id="nome" required="" autocomplete="off">
+                <label for="nome" class="black-text">Nome</label>
+            </div>
+            <div class="input-field col s12">
+                <input type="email" name="email" id="email" required="" autocomplete="off">
+                <label for="email" class="black-text">Email</label>
+            </div>
+            <div class="input-field col s12">
+                <input type="password" name="senha" id="senha" required="">
+                <label for="senha" class="black-text">Senha</label>
+            </div>
+            <div class="input-field col s12">
+                <input type="password" name="csenha" id="csenha" required="">
+                <label for="csenha" class="black-text">Confirmar Senha</label>
+            </div>
+            <div class="input-field col s12">
+                <select name="tipo" id="tipo">
+                    <option value="" disabled selected>Escolha um Tipo</option>
+                    <option value="0">Cliente</option>
+                    <option value="1">Administrador</option>
+                </select>
+                <label class="black-text">Tipo de Usuário</label>
+            </div>
+
+
+<hr>
+        <button type="submit" class="btn green" style="float: right; margin-left: 10px"><i class="material-icons">check</i> Cadastrar</button>
+        <a href="/admin" class="btn" style="float: right"><i class="material-icons">keyboard_return</i> Voltar</a>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>

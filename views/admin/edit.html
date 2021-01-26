@@ -1,0 +1,43 @@
+{if="$erro != ''"}
+<script>
+    window.onload = function(){
+        M.toast({html: '{$erro}'});
+    }
+</script>
+{/if}
+
+<div class="row">
+    <div class="col s12 m6 push-m3">
+        <form method="POST">
+            <h3 class="light"; align="left">Editar Usuário</h3>
+            <div class="input-field col s12">
+                <input type="text" name="nome" id="nome", value="{$usuario.Nome}" autocomplete="off">
+                <label for="nome" class="black-text">Nome</label>
+            </div>
+            <div class="input-field col s12">
+                <input type="email" name="email" id="email" value="{$usuario.Email}" autocomplete="off">
+                <label for="email" class="black-text">Email</label>
+            </div>
+            <div class="input-field col s12">
+                {if="$usuario.Adm == 1"}
+                <select name="tipo" id="tipo">
+                    <option value="0" >Cliente</option>
+                    <option value="1" selected >Administrador</option>
+                </select>
+                {else}
+                <select name="tipo" id="tipo">
+                    <option value="0" selected >Cliente</option>
+                    <option value="1" >Administrador</option>
+                </select>
+                {/if}
+                <label class="black-text">Tipo de Usuário</label>
+            </div>
+            <input type="hidden" id="id" name="id" value={$usuario.Id}>
+
+
+<hr>
+        <button type="submit" class="btn green" style="float: right; margin-left: 10px"><i class="material-icons">check</i> Editar</button>
+        <a href="/admin" class="btn" style="float: right"><i class="material-icons">keyboard_return</i> Voltar</a>
+        </form>
+    </div>
+</div>
